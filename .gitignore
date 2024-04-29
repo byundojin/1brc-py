@@ -47,3 +47,5 @@ out/
 /*.out
 out_expected.txt
 /*-timing.json
+data/measurements.txt
+src/main/python/1brc_test.py
