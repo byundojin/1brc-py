@@ -40,4 +40,12 @@ def main():
     print(time.time() - start_time)
 
 if __name__ == "__main__":
-    main()
+    import cProfile
+    from pstats import Stats
+    profiler = cProfile.Profile()
+    profiler.runcall(main)
+
+    stats = Stats(profiler)
+    stats.strip_dirs()
+    stats.sort_stats('cumulative')
+    stats.print_stats()
