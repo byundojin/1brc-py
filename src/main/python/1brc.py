@@ -16,8 +16,10 @@ stations:dict[str, Station] = {}
 
 def solution():
     with open("../../../data/measurements.txt", "r", encoding="utf-8") as f:
-        for i in f.read().split("\n"):
-            station_name, temp = i.split(";")
+        while True:
+            data = f.readline()
+            if data == "": break
+            station_name, temp = data.split(";")
             temp = float(temp)
             
             if station_name in stations:
